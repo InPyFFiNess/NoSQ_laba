@@ -5,7 +5,7 @@ from pymongo import AsyncMongoClient
 
 class PC_ComponentsVC(BaseModel):
     size: float
-    CompOfOutPorts: int
+    compOfOutPorts: int
 
 class PC_ComponentsMB(BaseModel):
     form: str
@@ -15,7 +15,13 @@ class PC_ComponentsPROC(BaseModel):
     socket: str
     frequency: float
 
-class PC_Components
+class PC_ComponentsOZU(BaseModel):
+    frequency: float
+    size: float
+
+class PC_ComponentsPZU(BaseModel):
+    formFactor: str
+    size: float
 
 class Category(BaseModel):
     tip: str
@@ -26,7 +32,7 @@ class PC_Components(Document):
     model: str
     price: float
     category: Category
-    parametrs: 
+
     
 
     class Settings:
