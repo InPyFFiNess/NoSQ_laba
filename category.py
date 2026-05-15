@@ -3,6 +3,20 @@ from pydantic import BaseModel
 import asyncio
 from pymongo import AsyncMongoClient
 
+class PC_ComponentsVC(BaseModel):
+    size: float
+    CompOfOutPorts: int
+
+class PC_ComponentsMB(BaseModel):
+    form: str
+    socket: str
+
+class PC_ComponentsPROC(BaseModel):
+    socket: str
+    frequency: float
+
+class PC_Components
+
 class Category(BaseModel):
     tip: str
     description: str
@@ -12,6 +26,8 @@ class PC_Components(Document):
     model: str
     price: float
     category: Category
+    parametrs: 
+    
 
     class Settings:
         name = "PC_Components"
@@ -20,7 +36,7 @@ async def main():
     client = AsyncMongoClient("mongodb://localhost:27017")
     await init_beanie(database=client.Catalog, document_models=[PC_Components])
     
-    await PC_Components(production="NVIDIA", model="RTX 3050", price=3000, Category(tip="video card", )).insert()
+    await PC_Components(production="NVIDIA", model="RTX 3050", price=3000, category=Category(tip="video card", description="...")).insert()
     await PC_Components().insert()
     await PC_Components().insert()
     
